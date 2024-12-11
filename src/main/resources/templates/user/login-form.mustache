@@ -1,0 +1,20 @@
+{{> layout/header}}
+
+<section>
+    <form action="/login" method="post" enctype="application/x-www-form-urlencoded">
+        <input type="text" name="username" placeholder="아이디" value="ssar"><br>
+        <input type="password" name="password" placeholder="패스워드" value="1234"><br>
+        <button type="submit">로그인</button>
+        <button type="button" onclick="kakaoLogin()">카카오로그인</button>
+    </form>
+</section>
+
+<script>
+    function kakaoLogin() {
+        let url = `https://kauth.kakao.com/oauth/authorize?client_id=730a8ec7e91f04ab2647991ef34f1f81&redirect_uri=http://localhost:8080/oauth&response_type=code`;
+        location.href = url;
+    }
+</script>
+
+</body>
+</html>
